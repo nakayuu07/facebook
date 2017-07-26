@@ -1,12 +1,18 @@
-<p><%= notice %></p>
+<div class="container">
+  <div class="wrapper col-md-6 col-md-offset-1 col-sm-10">
+    <p><%= notice %></p>
 
-<h1>トピック一覧</h1>
+    <%= link_to "新規作成",new_topic_path,class: 'btn btn-primary'%>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+    <h1>トピック一覧</h1>
 
-<% @topics.each do |topic| %>
- <p>タイトル：<%= topic.title %><p>
- <p>本文：<%= topic.content %></p>
- <%= link_to "トピックを編集する",edit_topic_path(topic.id) %>
- <%= link_to"トピックを削除する",topic_path(topic.id), method: :delete,data: { confirm: '本当に編集していいですか？' } %>
-<% end %>
-
-<%= link_to "トピック作成",new_topic_path %>
+     <% @topics.each do |topic| %>
+     <div class="row">
+      <h4><strong><%= topic.title %></strong></h4>
+      <p><%= topic.content %></p>
+      <%= link_to "トピックを編集する",edit_topic_path(topic.id),class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to"トピックを削除する",topic_path(topic.id), method: :delete,data: { confirm: '本当に編集していいですか？' },class: 'btn btn-default btn-sm btn btn-danger'  %>
+      </div>
+    <% end %>
+  </div>
+</div>
