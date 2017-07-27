@@ -9,8 +9,8 @@
      <% @topics.each do |topic| %>
      <div class="row">
       <h3><strong><%= topic.user.name %></strong></h3>
-      <h4><strong><%= topic.title %></strong></h4>
-      <p><%= topic.content %></p>
+      <h4>タイトル:<strong><%= topic.title %></strong></h4>
+      <p>本文：<%= topic.content %></p>
       <%= link_to "トピックを編集する",edit_topic_path(topic.id),class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to"トピックを削除する",topic_path(topic.id), method: :delete,data: { confirm: '本当に編集していいですか？' },class: 'btn btn-default btn-sm btn btn-danger'  %>
       </div>
