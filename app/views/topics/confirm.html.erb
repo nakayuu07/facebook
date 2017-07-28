@@ -5,8 +5,10 @@
       <%= form_for(@topic) do |f| %>
         <%= f.hidden_field :title %>
         <%= f.hidden_field :content %>
-        <p><strong>タイトル:<%= @topic.title %></strong></p>
-        <p>本文:<%= @topic.content %></p>
+        <p class = "frame"><strong>題名</strong></p>
+        <p class = "center"><%= @topic.title%></p>
+        <p class = "frame"><strong>本文
+        <p class = "center"><%= @topic.content %></p>
         <%= f.submit "投稿する",class: 'btn btn-primary btn-block'  %>
       <% end %>
 
