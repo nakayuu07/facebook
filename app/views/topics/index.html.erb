@@ -8,6 +8,7 @@
 
      <% @topics.each do |topic| %>
      <div class="row">
+      <p class = one><%= profile_img(topic.user)%></p>
       <h3><strong><%= topic.user.name %></strong></h3>
       <h4>タイトル:<strong><%= topic.title %></strong></h4>
       <p>本文：<%= topic.content %></p>
