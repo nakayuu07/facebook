@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
       # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
       @comment = current_user.comments.build(comment_params)
       @topic = @comment.topic
-      # クライアント要求に応じてフォーマットを変更
       respond_to do |format|
         if @comment.save
           format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
