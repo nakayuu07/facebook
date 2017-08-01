@@ -10,9 +10,8 @@
      <div class="row">
       <p class = "picture"><%= profile_img(topic.user)%></p>
       <h3><strong><%= topic.user.name %></strong></h3>
-       <h3><strong><%= link_to topic_path(topic) do %>[<%= topic.title %>]</strong></h3>
+       <h3><strong><%= link_to topic_path(topic) do %>「<%= topic.title %>」</strong></h3>
       <% end %>
-      <h3><%= topic.content %></h3>
       <%= link_to "トピックを編集する",edit_topic_path(topic.id),class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to"トピックを削除する",topic_path(topic.id), method: :delete,data: { confirm: '本当に編集していいですか？' },class: 'btn btn-default btn-sm btn btn-danger'  %>
       </div>

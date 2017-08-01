@@ -5,6 +5,7 @@
         <p class="left picture"><%= profile_img(comment.user) %></p>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
+        <%= comment.created_at.strftime("%y/%m/%d %p %l:%M") %>
         <% if current_user.id == comment.user.id %>
           <p class="right">
             <%= link_to '', topic_comment_path(topic, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
