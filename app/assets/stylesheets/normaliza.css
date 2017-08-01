@@ -184,8 +184,9 @@ sup {
   top: -0.5em;
 }
 
-img{
-  max-width: 100%;
+.picture img{
+  width: 70px;
+  height: 70px
 }
 
 
