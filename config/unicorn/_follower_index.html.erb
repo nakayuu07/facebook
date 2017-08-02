@@ -1,0 +1,5 @@
+<% @user.followers.each do |person|  %>
+  <p class="light"><%= profile_img(person) %></p>
+  <p class="light"> <%= person.name %></p>
+  <p class="light"> <%= person.email %></p>
+<% end %>

@@ -35,6 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -44,7 +49,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 end
-
+  gem 'therubyracer', platforms: :ruby
   gem 'twitter-bootstrap-rails'
   gem 'devise'
   gem 'rails_12factor', group: :production
@@ -61,3 +66,5 @@ group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
 end
+
+ gem 'unicorn'
