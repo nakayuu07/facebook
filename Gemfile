@@ -55,6 +55,7 @@ end
   gem 'carrierwave'
   gem 'mini_magick'
   gem 'faker'
+  gem 'fog'
 
 group :development do
   gem 'letter_opener_web'
