@@ -12,8 +12,8 @@ CarrierWave.configure do |config|
 
   case Rails.env
     when 'production'
-      config.fog_directory = 'kaobook.productoin'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/kaobook.productoin'
+      config.fog_directory = 'kaobook.production'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/kaobook.production'
     when 'development'
       config.fog_directory = 'kaobook.developments'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/kaobook.developments'
