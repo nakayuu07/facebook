@@ -13,7 +13,22 @@ class CommentsController < ApplicationController
       end
     end
 
-   def destroy
+  def edit
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+    if @comment.update(comment_params)
+       redirect_to topic_path(@topic)
+    else
+       render :edit if @comment.invalid?
+    end
+  end
+
+  def destroy
        @comment = Comment.find(params[:id])
        @topic = @comment.topic
        @comment.destroy
@@ -21,7 +36,9 @@ class CommentsController < ApplicationController
        format.html { redirect_to topic_path(@topic) }
        format.js { render :index }
      end
-   end
+  end
+
+
 
     private
       # ストロングパラメーター

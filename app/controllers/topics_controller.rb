@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only:[:edit,:update,:destroy,:show]
 
 
+
   def index
     @topics = Topic.all
   end
@@ -32,13 +33,19 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic.update(topics_params)
-    redirect_to topics_path,notice:"トピックを編集しました！"
+    if @topic.update(topics_params)
+      redirect_to topics_path,notice:"トピックを編集しました！"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    @topic.destroy
-    redirect_to topics_path,notice:"トピックを削除しました！"
+    if @topic.destroy
+       redirect_to topics_path,notice:"トピックを削除しました！"
+    else
+       redirect_to root_path
+    end
   end
 
   def show
