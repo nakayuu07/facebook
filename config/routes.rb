@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :topics do
    resources :comments
    post :confirm, on: :collection
+   post :read, on: :member
+   post :unread, on: :member
 end
 
   resources :conversations do

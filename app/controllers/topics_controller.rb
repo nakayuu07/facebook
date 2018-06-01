@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
 
   before_action :authenticate_user!
 
-  before_action :set_topic, only:[:edit,:update,:destroy,:show]
+  before_action :set_topic, only:[:edit,:update,:destroy,:show ,:read, :unread]
 
 
 
@@ -58,9 +58,19 @@ class TopicsController < ApplicationController
     render :new if @topic.invalid?
   end
 
+  def read
+    @topic.update(read: true)
+    redirect_to topics_path
+  end
+
+  def unread
+    @topic.update(read: false)
+    redirect_to topics_path
+  end
+
   private
    def topics_params
-     params.require(:topic).permit(:title, :content)
+     params.require(:topic).permit(:title, :content, :read)
    end
 
    def set_topic
